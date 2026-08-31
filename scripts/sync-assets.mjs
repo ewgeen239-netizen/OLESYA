@@ -41,13 +41,31 @@ const ASSETS = [
   },
 ];
 
-mkdirSync(TARGET_DIR, { recursive: true });
+/**
+ * Ten skrypt działa jako `prebuild`, także na CI (np. Vercel).
+ * Jest wyłącznie udogodnieniem — kopiuje zdjęcia, jeśli leżą nie tam, gdzie
+ * trzeba. Nigdy nie może przerwać builda, dlatego każda operacja na dysku
+ * jest osłonięta: brak katalogu domowego czy read-only FS ma być pomijany,
+ * a nie wywracać wdrożenie.
+ */
+const safely = (fn, fallback) => {
+  try {
+    return fn();
+  } catch {
+    return fallback;
+  }
+};
+
+safely(() => mkdirSync(TARGET_DIR, { recursive: true }));
 
 let missingRequired = false;
 
 for (const asset of ASSETS) {
   const target = join(TARGET_DIR, asset.name);
-  const found = asset.sources.find((p) => existsSync(p) && statSync(p).isFile());
+  const found = safely(
+    () => asset.sources.find((p) => safely(() => existsSync(p) && statSync(p).isFile(), false)),
+    undefined
+  );
 
   if (!found) {
     if (asset.required) missingRequired = true;
@@ -55,8 +73,11 @@ for (const asset of ASSETS) {
   }
 
   if (found !== target) {
-    copyFileSync(found, target);
-    console.log(`✓ Skopiowano ${asset.name} → public/images/${asset.name}`);
+    const copied = safely(() => {
+      copyFileSync(found, target);
+      return true;
+    }, false);
+    if (copied) console.log(`✓ Skopiowano ${asset.name} → public/images/${asset.name}`);
   }
 }
 

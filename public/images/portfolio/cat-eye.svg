@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img">
+  <defs>
+    <linearGradient id="bg-cateye" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#e6d4be"/>
+      <stop offset="1" stop-color="#b5977a"/>
+    </linearGradient>
+    <radialGradient id="glow-cateye" cx="0.32" cy="0.22" r="0.75">
+      <stop offset="0" stop-color="#fffdfa" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#fffdfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig-cateye" cx="0.5" cy="0.45" r="0.92">
+      <stop offset="0.6" stop-color="#4b3a31" stop-opacity="0"/>
+      <stop offset="1" stop-color="#4b3a31" stop-opacity="0.09"/>
+    </radialGradient>
+    <filter id="soft-cateye" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#4b3a31" flood-opacity="0.22"/>
+    </filter>
+    <filter id="grain-cateye" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="c-cateye-0"><rect x="54.0" y="476.0" width="116" height="232.0" rx="58.0" transform="rotate(18 112 708.0)"/></clipPath>
+      <clipPath id="c-cateye-1"><rect x="198.0" y="314.0" width="116" height="358.0" rx="58.0" transform="rotate(9 256 672.0)"/></clipPath>
+      <clipPath id="c-cateye-2"><rect x="342.0" y="260.0" width="116" height="400.0" rx="58.0" transform="rotate(0 400 660.0)"/></clipPath>
+      <clipPath id="c-cateye-3"><rect x="486.0" y="314.0" width="116" height="358.0" rx="58.0" transform="rotate(-9 544 672.0)"/></clipPath>
+      <clipPath id="c-cateye-4"><rect x="630.0" y="476.0" width="116" height="232.0" rx="58.0" transform="rotate(-18 688 708.0)"/></clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg-cateye)"/>
+  <rect width="800" height="1000" fill="url(#glow-cateye)"/>
+
+  <g>
+      <g transform="rotate(18 112 708.0)" filter="url(#soft-cateye)">
+        <rect x="54.0" y="476.0" width="116" height="232.0" rx="58.0" fill="#efdecb" stroke="#cdaf90" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cateye-0)" x="71.0" y="510.0" width="17" height="136.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cateye-0)" cx="112" cy="708.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <rect clip-path="url(#c-cateye-0)" x="54.0" y="524.0" width="116" height="3" fill="#d9c3a5" opacity="0.85"/>
+      <g transform="rotate(9 256 672.0)" filter="url(#soft-cateye)">
+        <rect x="198.0" y="314.0" width="116" height="358.0" rx="58.0" fill="#efdecb" stroke="#cdaf90" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cateye-1)" x="215.0" y="348.0" width="17" height="262.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cateye-1)" cx="256" cy="672.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <rect clip-path="url(#c-cateye-1)" x="198.0" y="362.0" width="116" height="3" fill="#d9c3a5" opacity="0.85"/>
+      <g transform="rotate(0 400 660.0)" filter="url(#soft-cateye)">
+        <rect x="342.0" y="260.0" width="116" height="400.0" rx="58.0" fill="#efdecb" stroke="#cdaf90" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cateye-2)" x="359.0" y="294.0" width="17" height="304.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cateye-2)" cx="400" cy="660.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <circle clip-path="url(#c-cateye-2)" cx="400" cy="334.0" r="15" fill="#d9c3a5"/>
+      <circle clip-path="url(#c-cateye-2)" cx="400" cy="334.0" r="15" fill="none" stroke="#fffaf5" stroke-width="2.5" opacity="0.75"/>
+      <g transform="rotate(-9 544 672.0)" filter="url(#soft-cateye)">
+        <rect x="486.0" y="314.0" width="116" height="358.0" rx="58.0" fill="#efdecb" stroke="#cdaf90" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cateye-3)" x="503.0" y="348.0" width="17" height="262.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cateye-3)" cx="544" cy="672.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <rect clip-path="url(#c-cateye-3)" x="486.0" y="362.0" width="116" height="3" fill="#d9c3a5" opacity="0.85"/>
+      <g transform="rotate(-18 688 708.0)" filter="url(#soft-cateye)">
+        <rect x="630.0" y="476.0" width="116" height="232.0" rx="58.0" fill="#efdecb" stroke="#cdaf90" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cateye-4)" x="647.0" y="510.0" width="17" height="136.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cateye-4)" cx="688" cy="708.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <rect clip-path="url(#c-cateye-4)" x="630.0" y="524.0" width="116" height="3" fill="#d9c3a5" opacity="0.85"/>
+  </g>
+
+  <!-- Miękki cień kontaktowy pod kompozycją (zamiast ciemnego pasa u dołu kadru) -->
+  <ellipse cx="400" cy="750" rx="304" ry="46" fill="#4b3a31" opacity="0.06"/>
+  <rect width="800" height="1000" fill="url(#vig-cateye)"/>
+  <rect width="800" height="1000" filter="url(#grain-cateye)" opacity="0.055"/>
+</svg>

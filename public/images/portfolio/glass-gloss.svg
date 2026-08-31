@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img">
+  <defs>
+    <linearGradient id="bg-glassgloss" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#f3e6d7"/>
+      <stop offset="1" stop-color="#d0b192"/>
+    </linearGradient>
+    <radialGradient id="glow-glassgloss" cx="0.32" cy="0.22" r="0.75">
+      <stop offset="0" stop-color="#fffdfa" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#fffdfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig-glassgloss" cx="0.5" cy="0.45" r="0.92">
+      <stop offset="0.6" stop-color="#4b3a31" stop-opacity="0"/>
+      <stop offset="1" stop-color="#4b3a31" stop-opacity="0.09"/>
+    </radialGradient>
+    <filter id="soft-glassgloss" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#4b3a31" flood-opacity="0.22"/>
+    </filter>
+    <filter id="grain-glassgloss" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="c-glassgloss-0"><rect x="54.0" y="504.0" width="116" height="204.0" rx="58.0" transform="rotate(-18 112 708.0)"/></clipPath>
+      <clipPath id="c-glassgloss-1"><rect x="198.0" y="342.0" width="116" height="330.0" rx="58.0" transform="rotate(-9 256 672.0)"/></clipPath>
+      <clipPath id="c-glassgloss-2"><rect x="342.0" y="288.0" width="116" height="372.0" rx="58.0" transform="rotate(0 400 660.0)"/></clipPath>
+      <clipPath id="c-glassgloss-3"><rect x="486.0" y="342.0" width="116" height="330.0" rx="58.0" transform="rotate(9 544 672.0)"/></clipPath>
+      <clipPath id="c-glassgloss-4"><rect x="630.0" y="504.0" width="116" height="204.0" rx="58.0" transform="rotate(18 688 708.0)"/></clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg-glassgloss)"/>
+  <rect width="800" height="1000" fill="url(#glow-glassgloss)"/>
+
+  <g>
+      <g transform="rotate(-18 112 708.0)" filter="url(#soft-glassgloss)">
+        <rect x="54.0" y="504.0" width="116" height="204.0" rx="58.0" fill="#fbf2e6" stroke="#e0c8ae" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-glassgloss-0)" x="71.0" y="538.0" width="17" height="108.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-glassgloss-0)" cx="112" cy="708.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <ellipse clip-path="url(#c-glassgloss-0)" cx="131.7" cy="614.0" rx="32.5" ry="92" fill="#ffffff" opacity="0.42"/>
+      <g transform="rotate(-9 256 672.0)" filter="url(#soft-glassgloss)">
+        <rect x="198.0" y="342.0" width="116" height="330.0" rx="58.0" fill="#fbf2e6" stroke="#e0c8ae" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-glassgloss-1)" x="215.0" y="376.0" width="17" height="234.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-glassgloss-1)" cx="256" cy="672.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <ellipse clip-path="url(#c-glassgloss-1)" cx="275.7" cy="452.0" rx="32.5" ry="92" fill="#ffffff" opacity="0.42"/>
+      <g transform="rotate(0 400 660.0)" filter="url(#soft-glassgloss)">
+        <rect x="342.0" y="288.0" width="116" height="372.0" rx="58.0" fill="#fbf2e6" stroke="#e0c8ae" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-glassgloss-2)" x="359.0" y="322.0" width="17" height="276.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-glassgloss-2)" cx="400" cy="660.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <ellipse clip-path="url(#c-glassgloss-2)" cx="419.7" cy="398.0" rx="32.5" ry="92" fill="#ffffff" opacity="0.42"/>
+      <g transform="rotate(9 544 672.0)" filter="url(#soft-glassgloss)">
+        <rect x="486.0" y="342.0" width="116" height="330.0" rx="58.0" fill="#fbf2e6" stroke="#e0c8ae" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-glassgloss-3)" x="503.0" y="376.0" width="17" height="234.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-glassgloss-3)" cx="544" cy="672.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <ellipse clip-path="url(#c-glassgloss-3)" cx="563.7" cy="452.0" rx="32.5" ry="92" fill="#ffffff" opacity="0.42"/>
+      <g transform="rotate(18 688 708.0)" filter="url(#soft-glassgloss)">
+        <rect x="630.0" y="504.0" width="116" height="204.0" rx="58.0" fill="#fbf2e6" stroke="#e0c8ae" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-glassgloss-4)" x="647.0" y="538.0" width="17" height="108.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-glassgloss-4)" cx="688" cy="708.0" rx="60.3" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <ellipse clip-path="url(#c-glassgloss-4)" cx="707.7" cy="614.0" rx="32.5" ry="92" fill="#ffffff" opacity="0.42"/>
+  </g>
+
+  <!-- Miękki cień kontaktowy pod kompozycją (zamiast ciemnego pasa u dołu kadru) -->
+  <ellipse cx="400" cy="750" rx="304" ry="46" fill="#4b3a31" opacity="0.06"/>
+  <rect width="800" height="1000" fill="url(#vig-glassgloss)"/>
+  <rect width="800" height="1000" filter="url(#grain-glassgloss)" opacity="0.055"/>
+</svg>

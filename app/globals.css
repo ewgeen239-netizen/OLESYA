@@ -1,0 +1,181 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   PALETA — ciepły, jasny brąz / mleko / szampan
+   Wszystkie kolory strony pochodzą z tych zmiennych. Zmiana tutaj
+   przebudowuje hero, dok, kafelki, przyciski, filtry, lightbox i CTA.
+   ========================================================================== */
+
+:root {
+  --background: #f8f3ed;
+  --surface: #fffaf5;
+  --surface-glass: rgba(255, 250, 245, 0.68);
+  --primary: #8b6f5a;
+  --primary-dark: #4b3a31;
+  --accent: #c6a889;
+  --accent-soft: #ead8c7;
+  --text: #302720;
+  --muted: #7b6a5d;
+  --border: rgba(139, 111, 90, 0.18);
+
+  /* Uzupełnienia w tej samej rodzinie */
+  --champagne: #d9c3a5;
+  --rose-gold: #c9a394;
+  --porcelain: #fdf9f4;
+
+  --shadow-soft: 0 24px 60px -28px rgba(75, 58, 49, 0.3);
+  --shadow-lift: 0 40px 90px -34px rgba(75, 58, 49, 0.42);
+  --shadow-dock: 0 20px 50px -20px rgba(75, 58, 49, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-porcelain: var(--porcelain);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-champagne: var(--champagne);
+  --color-rose-gold: var(--rose-gold);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+
+  --font-display: var(--font-display), ui-serif, 'Iowan Old Style', Palatino, serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* ==========================================================================
+   Podstawy
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Blokada przewijania, gdy otwarty jest lightbox */
+body[data-scroll-locked='true'] {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--primary-dark);
+}
+
+/* Wyraźny, ale elegancki focus — wymóg dostępności */
+:where(a, button, [tabindex]:not([tabindex='-1'])):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   Narzędzia
+   ========================================================================== */
+
+@utility glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid var(--border);
+}
+
+@utility glass-strong {
+  background: rgba(255, 250, 245, 0.86);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid var(--border);
+}
+
+/**
+ * Dok nawigacji stale unosi się nad przewijaną treścią, więc potrzebuje
+ * mocniejszego krycia — przy 0.86 tekst sekcji prześwitywał przez ikony.
+ */
+@utility glass-bar {
+  background: rgba(253, 249, 244, 0.95);
+  backdrop-filter: blur(30px) saturate(165%);
+  -webkit-backdrop-filter: blur(30px) saturate(165%);
+  border: 1px solid var(--border);
+}
+
+/** Ledwie widoczne ziarno — zdejmuje z tła "cyfrową płaskość". */
+@utility grain {
+  position: relative;
+}
+@utility grain-layer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/** Wersalikowa etykieta z szeroką światłością — powtarzalny akcent typograficzny. */
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Animacje bazowe (CSS — Framer Motion odpowiada za resztę)
+   ========================================================================== */
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ==========================================================================
+   prefers-reduced-motion — pełny fallback
+   Framer Motion dodatkowo wyłącza własne animacje przez useReducedMotion().
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

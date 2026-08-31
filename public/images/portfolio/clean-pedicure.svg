@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img">
+  <defs>
+    <linearGradient id="bg-cleanpedicure" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#eaddcc"/>
+      <stop offset="1" stop-color="#c6a888"/>
+    </linearGradient>
+    <radialGradient id="glow-cleanpedicure" cx="0.32" cy="0.22" r="0.75">
+      <stop offset="0" stop-color="#fffdfa" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#fffdfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig-cleanpedicure" cx="0.5" cy="0.45" r="0.92">
+      <stop offset="0.6" stop-color="#4b3a31" stop-opacity="0"/>
+      <stop offset="1" stop-color="#4b3a31" stop-opacity="0.09"/>
+    </radialGradient>
+    <filter id="soft-cleanpedicure" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#4b3a31" flood-opacity="0.22"/>
+    </filter>
+    <filter id="grain-cleanpedicure" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="c-cleanpedicure-0"><rect x="36.0" y="576.0" width="140" height="100.0" rx="70.0" transform="rotate(-10 106 676.0)"/></clipPath>
+      <clipPath id="c-cleanpedicure-1"><rect x="183.0" y="474.0" width="140" height="172.0" rx="70.0" transform="rotate(-5 253 646.0)"/></clipPath>
+      <clipPath id="c-cleanpedicure-2"><rect x="330.0" y="440.0" width="140" height="196.0" rx="70.0" transform="rotate(0 400 636.0)"/></clipPath>
+      <clipPath id="c-cleanpedicure-3"><rect x="477.0" y="474.0" width="140" height="172.0" rx="70.0" transform="rotate(5 547 646.0)"/></clipPath>
+      <clipPath id="c-cleanpedicure-4"><rect x="624.0" y="576.0" width="140" height="100.0" rx="70.0" transform="rotate(10 694 676.0)"/></clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg-cleanpedicure)"/>
+  <rect width="800" height="1000" fill="url(#glow-cleanpedicure)"/>
+
+  <g>
+      <g transform="rotate(-10 106 676.0)" filter="url(#soft-cleanpedicure)">
+        <rect x="36.0" y="576.0" width="140" height="100.0" rx="70.0" fill="#f6ead9" stroke="#dbc2a5" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cleanpedicure-0)" x="53.0" y="610.0" width="17" height="4.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cleanpedicure-0)" cx="106" cy="676.0" rx="72.8" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <g transform="rotate(-5 253 646.0)" filter="url(#soft-cleanpedicure)">
+        <rect x="183.0" y="474.0" width="140" height="172.0" rx="70.0" fill="#f6ead9" stroke="#dbc2a5" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cleanpedicure-1)" x="200.0" y="508.0" width="17" height="76.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cleanpedicure-1)" cx="253" cy="646.0" rx="72.8" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <g transform="rotate(0 400 636.0)" filter="url(#soft-cleanpedicure)">
+        <rect x="330.0" y="440.0" width="140" height="196.0" rx="70.0" fill="#f6ead9" stroke="#dbc2a5" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cleanpedicure-2)" x="347.0" y="474.0" width="17" height="100.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cleanpedicure-2)" cx="400" cy="636.0" rx="72.8" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <g transform="rotate(5 547 646.0)" filter="url(#soft-cleanpedicure)">
+        <rect x="477.0" y="474.0" width="140" height="172.0" rx="70.0" fill="#f6ead9" stroke="#dbc2a5" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cleanpedicure-3)" x="494.0" y="508.0" width="17" height="76.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cleanpedicure-3)" cx="547" cy="646.0" rx="72.8" ry="24" fill="#4b3a31" opacity="0.10"/>
+      <g transform="rotate(10 694 676.0)" filter="url(#soft-cleanpedicure)">
+        <rect x="624.0" y="576.0" width="140" height="100.0" rx="70.0" fill="#f6ead9" stroke="#dbc2a5" stroke-width="1" stroke-opacity="0.5"/>
+      </g>
+      <rect clip-path="url(#c-cleanpedicure-4)" x="641.0" y="610.0" width="17" height="4.0" rx="8.5" fill="#fffdfa" opacity="0.42"/>
+      <ellipse clip-path="url(#c-cleanpedicure-4)" cx="694" cy="676.0" rx="72.8" ry="24" fill="#4b3a31" opacity="0.10"/>
+  </g>
+
+  <!-- Miękki cień kontaktowy pod kompozycją (zamiast ciemnego pasa u dołu kadru) -->
+  <ellipse cx="400" cy="750" rx="304" ry="46" fill="#4b3a31" opacity="0.06"/>
+  <rect width="800" height="1000" fill="url(#vig-cleanpedicure)"/>
+  <rect width="800" height="1000" filter="url(#grain-cleanpedicure)" opacity="0.055"/>
+</svg>

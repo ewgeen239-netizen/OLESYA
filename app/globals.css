@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   PALETA — milk, blush, pearl, champagne, soft silver, graphite.
+   Zmieniasz kolory TYLKO tutaj; klasy Tailwind czytają te zmienne.
+   ------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbf8f6;
+  --surface: #fffdfb;
+  --surface-glass: rgba(255, 253, 251, 0.72);
+  --primary: #6f6266;
+  --primary-dark: #292529;
+  --accent: #d8c2b8;
+  --accent-soft: #f4e7e6;
+  --accent-deep: #d6cfd1;
+  --text: #2d2b2f;
+  --muted: #70696f;
+  --faint: #9a9298;
+  --border: rgba(111, 98, 102, 0.18);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--surface);
+  --color-latte: var(--accent-soft);
+  --color-latte-deep: var(--accent-deep);
+  --color-accent: var(--accent);
+  --color-accent-soft: #f5e9e7;
+  --color-champagne: #dfc9bb;
+  --color-almond: #d9d6d7;
+  --color-cocoa: var(--primary);
+  --color-espresso: var(--text);
+  --color-espresso-soft: var(--muted);
+  --color-espresso-faint: var(--faint);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+
+  --radius-card: 12px;
+
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* delikatna siatka jak na papierze — bez blobów i orbów */
+  .bg-grain {
+    position: relative;
+  }
+  .bg-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image:
+      linear-gradient(to right, rgba(139, 111, 90, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 111, 90, 0.07) 1px, transparent 1px);
+    background-size: 88px 88px;
+    mask-image: radial-gradient(120% 90% at 50% 0%, #000 20%, transparent 78%);
+  }
+
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

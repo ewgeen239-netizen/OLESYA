@@ -295,7 +295,7 @@ export default function HeroScene() {
           initial={{ opacity: 0, y: 30, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute right-[9vw] top-1/2 w-[min(22vw,280px)] -translate-y-1/2"
+          className="absolute left-1/2 top-1/2 z-10 w-[min(26vw,340px)] -translate-x-1/2 -translate-y-1/2"
         >
           <div className="overflow-hidden rounded-[14px] border border-cream/30 bg-cream/10 p-2 shadow-[0_50px_110px_-60px_rgba(36,28,23,0.9)] backdrop-blur-md">
             <Portrait

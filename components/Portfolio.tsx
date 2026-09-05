@@ -89,16 +89,13 @@ export default function Portfolio() {
           </Reveal>
         ) : null}
 
-        {/* editorial full-screen showcase */}
+        {/* compact portfolio grid */}
         <motion.ul
           layout
-          className="mt-10 flex flex-col gap-5 sm:gap-7 lg:gap-10"
+          className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-5"
         >
           <AnimatePresence mode="popLayout">
             {items.map((item, i) => {
-              const featured = i === 0 || i === 4;
-              const tall = i % 3 === 2;
-
               return (
               <motion.li
                 key={item.id}
@@ -111,7 +108,7 @@ export default function Portfolio() {
                   delay: Math.min(i * 0.03, 0.24),
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className={featured ? "relative left-1/2 w-screen -translate-x-1/2" : ""}
+                className="min-w-0"
               >
                 <button
                   type="button"
@@ -120,52 +117,35 @@ export default function Portfolio() {
                   className="group block w-full text-left"
                 >
                   <div
-                    className={`relative overflow-hidden border border-espresso/8 transition-all duration-500 group-hover:shadow-[0_30px_70px_-42px_rgba(75,58,49,0.8)] ${
-                      featured
-                        ? "h-[86svh] min-h-[620px] rounded-none"
-                        : tall
-                          ? "h-[78svh] min-h-[560px] rounded-[12px] lg:ml-auto lg:w-[68%]"
-                          : "h-[72svh] min-h-[520px] rounded-[12px] lg:w-[72%]"
-                    }`}
+                    className="relative overflow-hidden rounded-[10px] border border-espresso/8 bg-cream shadow-[0_18px_42px_-34px_rgba(75,58,49,0.7)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-espresso/18 group-hover:shadow-[0_26px_60px_-38px_rgba(75,58,49,0.82)]"
                   >
                     <NailPhoto
                       src={item.src}
                       alt={item.alt}
                       ratio={item.ratio}
                       tone={item.tone}
-                      sizes={featured ? "100vw" : "(max-width: 1024px) 100vw, 72vw"}
+                      sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 260px"
                       placeholderNote={item.isReference ? "inspiracja" : "portfolio photo coming soon"}
                       objectPosition={item.objectPosition}
-                      className="h-full w-full"
+                      className="w-full"
                     />
                     <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(36,28,23,0.02)_0%,rgba(36,28,23,0.12)_52%,rgba(36,28,23,0.64)_100%)]"
+                      className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(36,28,23,0)_42%,rgba(36,28,23,0.50)_100%)] opacity-90"
                     />
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-[8px] bg-cream/85 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+                      className="pointer-events-none absolute right-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-[8px] bg-cream/88 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
                     >
                       <Expand className="h-4 w-4 text-espresso" />
                     </span>
-                    <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-5 text-cream sm:p-7 lg:p-10">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="rounded-[7px] border border-cream/24 bg-cream/12 px-2.5 py-1 text-[11px] font-medium tracking-[0.12em] uppercase backdrop-blur-sm">
-                          {item.isReference ? "Inspiracja" : "Portfolio"}
-                        </span>
-                        <span className="rounded-[7px] border border-cream/24 bg-cream/12 px-2.5 py-1 text-[11px] tracking-[0.12em] uppercase text-cream/78 backdrop-blur-sm">
-                          {item.category}
-                        </span>
-                      </div>
-                      <div className="max-w-[680px]">
-                        <p className="font-display text-[34px] leading-[1.05] text-balance sm:text-[46px] lg:text-[60px]">
-                          {item.label}
-                        </p>
-                        <p className="mt-3 max-w-[52ch] text-[13px] leading-[1.65] text-cream/76 sm:text-[14px]">
-                          {item.alt}
-                          {item.source ? ` Source: ${item.source}.` : ""}
-                        </p>
-                      </div>
+                    <div className="absolute inset-x-0 bottom-0 p-3 text-cream sm:p-4">
+                      <p className="truncate text-[11px] font-medium tracking-[0.12em] uppercase text-cream/72">
+                        {item.isReference ? "Inspiracja" : "Portfolio"} · {item.category}
+                      </p>
+                      <p className="mt-1 font-display text-[20px] leading-[1.08] text-balance sm:text-[24px]">
+                        {item.label}
+                      </p>
                     </div>
                   </div>
                 </button>
